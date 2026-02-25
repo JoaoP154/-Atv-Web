@@ -4,80 +4,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro | Nexus</title>
+    <title>Novo Registro | Inventário Pro</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
-<body>
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
+<body class="form-layout">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-3"></div>
 
-    <nav class="navbar">
-        <div class="nav-brand">
-            <i class="fa-solid fa-layer-group"></i>
-            <span>Nexus<strong>Catálogo</strong></span>
-        </div>
-        <div class="nav-links">
-            <a href="index.html">Início</a>
-            <a href="cadastro.html" class="btn-primary active">Novo Item <i class="fa-solid fa-plus"></i></a>
+    <nav class="topbar">
+        <div class="topbar-inner">
+            <div class="logo">
+                <div class="logo-icon"><i class="fa-solid fa-shapes"></i></div>
+                <span>Inventário<strong>Pro</strong></span>
+            </div>
+            <div class="menu">
+                <a href="index.html">Dashboard</a>
+                <a href="cadastro.html" class="active-link action-btn"><i class="fa-solid fa-plus"></i> Adicionar
+                    Item</a>
+            </div>
         </div>
     </nav>
 
-    <main class="container form-page">
-        <header class="page-header center">
-            <h1>Cadastrar Novo Item</h1>
-            <p>Adicione um novo produto, filme ou música ao seu catálogo.</p>
-        </header>
+    <main class="wrapper narrow">
+        <div class="page-heading center">
+            <h1>Criar Novo Registro</h1>
+            <p>Preencha as informações abaixo para adicionar um novo item ao seu catálogo.</p>
+        </div>
 
-        <div class="card glass-form">
+        <div class="glass-panel form-container">
             <form id="cadastroForm">
-                <div class="form-group">
-                    <label for="name">Nome do Item <span class="required">*</span></label>
-                    <input type="text" id="name" name="name" required
-                        placeholder="Ex: O Senhor dos Anéis, iPhone 15...">
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group group-half">
-                        <label for="category">Categoria <span class="required">*</span></label>
-                        <select id="category" name="category" required>
-                            <option value="" disabled selected>Selecione uma categoria</option>
-                            <option value="Product">Produto Físico/Digital</option>
-                            <option value="Movie">Filme/Série</option>
-                            <option value="Music">Música/Álbum</option>
+                <div class="input-row">
+                    <div class="input-field">
+                        <label for="name">Nome do Item <span class="asterisk">*</span></label>
+                        <input type="text" id="name" required placeholder="Ex: Monitor Dell 27'">
+                    </div>
+                    <div class="input-field">
+                        <label for="category">Categoria <span class="asterisk">*</span></label>
+                        <select id="category" required>
+                            <option value="" disabled selected>Escolha a categoria</option>
+                            <option value="Product">Produto</option>
+                            <option value="Movie">Filme</option>
+                            <option value="Music">Música</option>
                         </select>
                     </div>
+                </div>
 
-                    <div class="form-group group-half">
-                        <label for="price">Preço R$ <small>(Opcional)</small></label>
-                        <input type="number" id="price" name="price" step="0.01" min="0" placeholder="0.00">
+                <div class="input-row">
+                    <div class="input-field">
+                        <label for="price">Valor Estimado (R$)</label>
+                        <input type="number" step="0.01" id="price" placeholder="Ex: 1500.00">
+                    </div>
+                    <div class="input-field">
+                        <label for="imageUrl">URL da Imagem de Capa</label>
+                        <input type="url" id="imageUrl" placeholder="https://exemplo.com/imagem.png">
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="imageUrl">URL da Imagem <small>(Opcional)</small></label>
-                    <input type="url" id="imageUrl" name="imageUrl" placeholder="https://exemplo.com/imagem.png">
-                </div>
-
-                <div class="form-group">
+                <div class="input-field full-width">
                     <label for="description">Descrição</label>
-                    <textarea id="description" name="description" rows="4"
-                        placeholder="Adicione detalhes sobre o item..."></textarea>
+                    <textarea id="description" rows="4" placeholder="Detalhes adicionais sobre o item..."></textarea>
                 </div>
 
-                <div class="form-actions">
-                    <a href="index.html" class="btn-secondary">Cancelar</a>
-                    <button type="submit" class="btn-primary" id="submitBtn">
-                        <span>Cadastrar Item</span>
-                        <i class="fa-solid fa-check"></i>
-                    </button>
+                <div class="form-footer">
+                    <a href="index.html" class="btn-cancel">Cancelar</a>
+                    <button type="submit" id="submitBtn" class="action-btn primary-action">Adicionar ao Acervo</button>
                 </div>
-
-                <div id="toastMessage" class="toast hidden"></div>
             </form>
         </div>
+
+        <div id="toastMessage" class="hidden"></div>
     </main>
 
     <script src="script.js"></script>

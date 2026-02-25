@@ -1,40 +1,51 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo | Meus Itens</title>
+    <title>Inventário Pro</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
-    
-    <nav class="navbar">
-        <div class="nav-brand">
-            <i class="fa-solid fa-layer-group"></i>
-            <span>Nexus<strong>Catálogo</strong></span>
-        </div>
-        <div class="nav-links">
-            <a href="index.html" class="active">Início</a>
-            <a href="cadastro.html" class="btn-primary">Novo Item <i class="fa-solid fa-plus"></i></a>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+
+    <nav class="topbar">
+        <div class="topbar-inner">
+            <div class="logo">
+                <div class="logo-icon"><i class="fa-solid fa-shapes"></i></div>
+                <span>Inventário<strong>Pro</strong></span>
+            </div>
+            <div class="menu">
+                <a href="index.html" class="active-link">Dashboard</a>
+                <a href="cadastro.html" class="action-btn"><i class="fa-solid fa-plus"></i> Adicionar Item</a>
+            </div>
         </div>
     </nav>
 
-    <main class="container">
-        <header class="page-header">
-            <h1>Seus Itens Cadastrados</h1>
-            <p>Gerencie seus filmes, músicas e produtos favoritos em um só lugar.</p>
-        </header>
-
-        <div class="controls">
-            <div class="search-bar">
-                <i class="fa-solid fa-search"></i>
-                <input type="text" id="searchInput" placeholder="Buscar itens...">
+    <main class="wrapper">
+        <div class="page-heading">
+            <div class="heading-content">
+                <h1>Seu acervo em um só lugar</h1>
+                <p>Organize, pesquise e filtre seus produtos, filmes e músicas favoritos rapidamente.</p>
             </div>
-            <div class="filter-group">
+            <div class="heading-art">
+                <i class="fa-solid fa-boxes-stacked"></i>
+            </div>
+        </div>
+
+        <div class="toolbar glass-panel">
+            <div class="search-wrapper">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="searchInput" placeholder="O que você está procurando?">
+            </div>
+            <div class="filters">
                 <button class="filter-btn active" data-filter="all">Todos</button>
                 <button class="filter-btn" data-filter="Product">Produtos</button>
                 <button class="filter-btn" data-filter="Movie">Filmes</button>
@@ -42,23 +53,28 @@
             </div>
         </div>
 
-        <div id="loader" class="loader-container">
-            <div class="spinner"></div>
-            <p>Carregando catálogo...</p>
+        <div id="loader" class="loading-state">
+            <div class="bounce-loader">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <p>Sincronizando dados...</p>
         </div>
 
-        <div id="emptyState" class="empty-state hidden">
-            <div class="empty-icon"><i class="fa-solid fa-box-open"></i></div>
-            <h2>Nenhum item encontrado</h2>
-            <p>Parece que o seu catálogo está vazio no momento.</p>
-            <a href="cadastro.html" class="btn-secondary">Cadastrar Primeiro Item</a>
+        <div id="emptyState" class="blank-state hidden glass-panel">
+            <div class="blank-illustration"><i class="fa-regular fa-folder-open"></i></div>
+            <h2>Nada por aqui ainda</h2>
+            <p>Seu banco de dados de itens está vazio. Adicione seu primeiro registro para começar.</p>
+            <a href="cadastro.html" class="action-btn secondary-action">Criar Item</a>
         </div>
 
-        <div class="grid" id="itemsGrid">
-            <!-- Items will be dynamically injected here -->
+        <div class="bento-grid" id="itemsGrid">
+            <!-- Cards will be populated here by script.js -->
         </div>
     </main>
 
     <script src="script.js"></script>
 </body>
+
 </html>
