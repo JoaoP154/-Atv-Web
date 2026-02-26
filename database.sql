@@ -1,9 +1,0 @@
-CREATE DATABASE IF NOT EXISTS web_03ma;
-USE web_03ma;
-
-CREATE TABLE IF NOT EXISTS itens_antigravity (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(255) NOT NULL,
-    categoria VARCHAR(100) NOT NULL,
-    descricao TEXT
-);
